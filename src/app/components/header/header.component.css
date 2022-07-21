@@ -1,0 +1,41 @@
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  background: #e91e6300;
+  color: black;
+  padding-top: 20px;
+  margin:auto;
+  margin-bottom: 30px;
+  width: 98%;
+  max-width: 1440px;
+  min-width: 300px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+span {
+  font-style: italic;
+  font-weight: 100;
+  background: -webkit-linear-gradient(#ec7366, #d055c3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 8px;
+}
+
+img {
+  width: 50px;
+  margin-right: 6px;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+mat-icon {
+  color: #d875d2;
+  cursor: pointer;
+  margin-top: 8px;
+}

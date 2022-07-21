@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Post} from "../../shared/interfaces";
 
 @Component({
   selector: 'app-flowers-list',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./flowers-list.component.css']
 })
 export class FlowersListComponent implements OnInit {
+
+  posts: Post[] = []
+  filterFlowerByType = 'all'
 
   constructor() { }
 

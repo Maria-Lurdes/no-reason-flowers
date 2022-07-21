@@ -1,1 +1,54 @@
-<p>flowers-list works!</p>
+<div class="find-block">
+
+  <div class="page-title-wrapper">
+    <p class="title">
+      To show love
+      <br>
+      no need to look for an opportunity
+    </p>
+  </div>
+</div>
+
+
+<div class="content-wrapper">
+  <div class="page-wrapper">
+  <div class="list-container">
+    <div class="categories-block">
+      <p class="title-categories">
+        Categories
+      </p>
+      <div class="view-all" (click)="filterFlowerByType='all'">
+        <p>View All</p>
+        <div class="btn-yellow">
+          <img
+            src="../../../assets/arrow-white.png" alt="">
+        </div>
+      </div>
+
+      <div class="flowers-types-block">
+        <div [className]="filterFlowerByType === 'bouquets' ? 'active type' : 'type'" (click)="filterFlowerByType='bouquets'">
+          <p>Bouquets</p>
+        </div>
+        <div [className]="filterFlowerByType === 'box' ? 'active type' : 'type'" (click)="filterFlowerByType='box'">
+          <p>Flowers in a box</p>
+        </div>
+        <div [className]="filterFlowerByType === 'gypsophila' ? 'active type' : 'type'" (click)="filterFlowerByType='gypsophila'">
+          <p>Gypsophila</p>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="posts[0]?.avatar; else loading" class="flowers-wrapper">
+<!--      <app-pet-card-->
+<!--        *ngFor="let post of posts | filterType:filterPetByType"-->
+<!--        [petPost]="post"-->
+<!--        [userId]="userId"-->
+<!--        [favouritesList]="favouritesList"-->
+<!--      ></app-pet-card>-->
+    </div>
+
+    <ng-template #loading>
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </ng-template>
+  </div>
+  </div>
+</div>

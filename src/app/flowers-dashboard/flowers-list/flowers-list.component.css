@@ -1,0 +1,118 @@
+.find-block {
+  width: 100%;
+  height: 100vh;
+  background: url("../../../assets/flowers.avif");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-title-wrapper {
+  width: 98%;
+  max-width: 1440px;
+  min-width: 300px;
+}
+
+.title {
+  font-size: 50px;
+  text-align: center;
+  line-height: 67px;
+  color: white;
+  font-style: italic;
+}
+
+.content-wrapper {
+  height: 500px;
+}
+
+.page-wrapper {
+  width: 98%;
+  max-width: 1440px;
+  min-width: 300px;
+  height: 100%;
+  margin: auto;
+}
+
+.list-container {
+  padding-top: 60px;
+}
+
+.categories-block {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flowers-types-block {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+
+.type {
+  background: #F7F7F8;
+  border-radius: 15.6645px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16px;
+  cursor: pointer;
+  padding: 25px 30px;
+}
+
+.type p {
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #303030;
+  margin: 0;
+}
+
+.type.active {
+  background: linear-gradient(180deg, #d875d2 0%, #e91e63 100%);
+  box-shadow: 0 9.39868px 22.9745px rgba(0, 0, 0, 0.06), 0 4.86042px 9.5093px rgba(0, 0, 0, 0.0364023), 0 3.41853px 5.70127px rgba(0, 0, 0, 0.0251704), 0 2.18408px 2.93018px rgba(0, 0, 0, 0.0151591);
+}
+
+.type.active p {
+  color: white;
+}
+
+.view-all {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.view-all p {
+  font-size: 14px;
+  color: #e91e63;
+  margin: 0 10px 0 20px;
+}
+
+.btn-yellow {
+  background: #e91e63;
+  border-radius: 4.17719px;
+  width: 20px;
+  height: 18px;
+}
+
+.title-categories {
+  font-size: 18px;
+  background: -webkit-linear-gradient(#ec7366, #d055c3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 8px;
+}
+
+.flowers-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
