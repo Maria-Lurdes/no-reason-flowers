@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Post} from "../../shared/interfaces";
+import {PostService} from "../../shared/services/post.service";
 
 @Component({
   selector: 'app-flowers-list',
@@ -11,9 +12,16 @@ export class FlowersListComponent implements OnInit {
   posts: Post[] = []
   filterFlowerByType = 'all'
 
-  constructor() { }
+  constructor(private postService: PostService) { }
 
   ngOnInit(): void {
+    this.getAllFlowersPosts();
+  }
+
+  getAllFlowersPosts(){
+    this.postService.flowersPostsArray.subscribe(currentPosts => {
+      this.posts = currentPosts;
+    })
   }
 
 }
