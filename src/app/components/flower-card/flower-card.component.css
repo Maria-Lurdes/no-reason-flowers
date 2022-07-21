@@ -50,7 +50,3 @@ button {
 button span {
   font-weight: 100;
 }
-
-button:hover {
-  background: #e91e63;
-}
