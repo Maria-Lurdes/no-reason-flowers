@@ -1,0 +1,10 @@
+<mat-card class="example-card">
+  <div class="image-flower" [style.background-image]="'url('+flowerPost?.image+')'"></div>
+  <mat-card-content>
+    <h2>{{flowerPost?.name}}</h2>
+  </mat-card-content>
+  <mat-card-content>
+    <h2><b>{{flowerPost?.price}} UAH</b></h2>
+    <button mat-raised-button>ADD TO CARD</button>
+  </mat-card-content>
+</mat-card>

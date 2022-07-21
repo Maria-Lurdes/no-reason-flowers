@@ -38,12 +38,8 @@
       </div>
     </div>
     <div *ngIf="posts?.length; else loading" class="flowers-wrapper">
-<!--      <app-pet-card-->
-<!--        *ngFor="let post of posts | filterType:filterPetByType"-->
-<!--        [petPost]="post"-->
-<!--        [userId]="userId"-->
-<!--        [favouritesList]="favouritesList"-->
-<!--      ></app-pet-card>-->
+      <app-flower-card
+        *ngFor="let post of posts | filterType:filterFlowerByType" [flowerPost]="post"></app-flower-card>
     </div>
 
     <ng-template #loading>

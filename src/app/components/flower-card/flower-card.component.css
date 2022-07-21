@@ -1,0 +1,56 @@
+mat-card {
+  width: 370px;
+  background: white;
+  padding: 0 0 30px;
+  color: #303030;
+  margin-bottom: 50px;
+  box-shadow: 0 9.39868px 22.9745px rgba(0, 0, 0, 0.06), 0 4.86042px 9.5093px rgba(0, 0, 0, 0.0364023), 0 3.41853px 5.70127px rgba(0, 0, 0, 0.0251704), 0 2.18408px 2.93018px rgba(0, 0, 0, 0.0151591) !important;
+}
+
+mat-card-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+h2{
+  margin-top: 15px !important;
+  font-weight: 100;
+}
+
+.image-flower {
+  width: 100%;
+  height: 430px;
+  background-size: cover;
+  background-position: center;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 0;
+  color: #000;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  background: 0 0;
+  border: 1px solid #e91e63;
+  transition: all .3s linear;
+  box-shadow: none !important;
+  font-weight: 200;
+}
+
+button span {
+  font-weight: 100;
+}
+
+button:hover {
+  background: #e91e63;
+}

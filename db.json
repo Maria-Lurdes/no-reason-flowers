@@ -51,14 +51,14 @@
     },
     { "id": 8,
       "type": "box",
-      "name": "Hydrangea with garden roses",
+      "name": "Hydrangea with roses",
       "description": "Delicate hydrangea in combination with a garden rose of a rare variety of Japanese selection will definitely make an impression and be remembered for a long time. ",
       "price": 2900,
       "image": "https://kiwiflowershop.com.ua/image/cache/catalog/00441-601x800.jpg"
     },
     { "id": 9,
       "type": "box",
-      "name": "Basket with seasonal flowers",
+      "name": "Basket",
       "description": "A full basket of seasonal flowers is the dream of almost every girl. You can take it with you on a picnic or arrange a photo shoot for Instagram. ",
       "price": 3100,
       "image": "https://kiwiflowershop.com.ua/image/cache/catalog/00773-601x800.jpg"
@@ -79,7 +79,7 @@
     },
     { "id": 12,
       "type": "gypsophila",
-      "name": "Rainbow gypsophila in a box М",
+      "name": "Rainbow gypsophila M",
       "description": "A definite hit of sales at any time of the year - rainbow gypsophila, now available in a box. ",
       "price": 1500,
       "image": "https://kiwiflowershop.com.ua/image/cache/catalog/00438-601x800.jpg"
@@ -93,17 +93,17 @@
     },
     { "id": 14,
       "type": "gypsophila",
-      "name": "White Cloud",
+      "name": "White Cloud Small",
       "description": "Light and airy composition of white gypsophila in a delicate purple box will be a wonderful gift for a lover of wildflowers. ",
       "price": 990,
-      "image": "https://kiwiflowershop.com.ua/image/cache/catalog/00271/img_4515-601x800.jpg"
+      "image": "https://kiwiflowershop.com.ua/image/cache/catalog/00367.2-400x532.jpg"
     },
     { "id": 15,
       "type": "box",
       "name": "Kiwi box M",
       "description": "Light and airy composition of white gypsophila in a delicate purple box will be a wonderful gift for a lover of wildflowers. ",
       "price": 1050,
-      "image": "https://kiwiflowershop.com.ua/image/cache/catalog/00302.2-601x800.jpg"
+      "image": "https://kiwiflowershop.com.ua/image/cache/catalog/00758-400x532.jpg"
     },
     { "id": 16,
       "type": "box",
@@ -121,7 +121,7 @@
     },
     { "id": 18,
       "type": "bouquets",
-      "name": "Summer bouquet with peonies and hydrangea",
+      "name": "Summer bouquet",
       "description": "Light and airy composition of white gypsophila in a delicate purple box will be a wonderful gift for a lover of wildflowers. ",
       "price": 4700,
       "image": "https://kiwiflowershop.com.ua/image/cache/catalog/00364-601x800.jpg"
@@ -135,7 +135,7 @@
     },
     { "id": 20,
       "type": "bouquets",
-      "name": "Bouquet with hydrangea and peony rose",
+      "name": "Hydrangea and rose",
       "description": "Incredibly stylish and bright bouquet in purple-purple shades will be a great surprise for bright and creative people. ",
       "price": 5400,
       "image": "https://kiwiflowershop.com.ua/image/cache/catalog/00161/00409-601x800.jpg"
