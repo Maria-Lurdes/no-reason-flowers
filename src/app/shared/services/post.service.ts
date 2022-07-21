@@ -1,17 +1,18 @@
-import {Subject} from "rxjs";
+import {Subject, Subscription} from "rxjs";
 import {Post} from "../interfaces";
 import {Injectable} from "@angular/core";
-import posts from '../db.json';
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({providedIn:'root'})
 export class PostService {
-    constructor() {
-    }
+    constructor(private http: HttpClient) {}
 
     public flowersPostsArray = new Subject<Post[]>();
 
-    getAllFlowersPosts(){
-      this.flowersPostsArray.next(posts);
-    }
+      getAll(): Subscription{
+        return this.http.get<Post[]>(` http://localhost:3000/posts`).subscribe((data: Post[]) => {
+            this.flowersPostsArray.next(data);
+          })
+      }
 
 }

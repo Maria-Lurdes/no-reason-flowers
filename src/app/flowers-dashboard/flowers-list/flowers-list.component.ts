@@ -9,19 +9,24 @@ import {PostService} from "../../shared/services/post.service";
 })
 export class FlowersListComponent implements OnInit {
 
-  posts: Post[] = []
+  posts: Post[] = [];
   filterFlowerByType = 'all'
 
   constructor(private postService: PostService) { }
 
   ngOnInit(): void {
     this.getAllFlowersPosts();
+    this.getCurrentPosts();
   }
 
-  getAllFlowersPosts(){
+  getCurrentPosts() {
     this.postService.flowersPostsArray.subscribe(currentPosts => {
-      this.posts = currentPosts;
+      this.posts = [...currentPosts];
     })
+  }
+
+  getAllFlowersPosts() {
+    this.postService.getAll();
   }
 
 }
