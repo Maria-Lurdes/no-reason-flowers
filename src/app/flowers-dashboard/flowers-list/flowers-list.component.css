@@ -46,14 +46,15 @@
   flex-wrap: wrap;
   width: 90%;
   margin: auto;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .flowers-types-block {
-  width: 100%;
+  width: 90%;
   display: flex;
   align-items: center;
-  margin-top: 25px;
-  margin-bottom: 50px;
+  margin: 25px auto 50px;
 }
 
 .type {
@@ -106,9 +107,7 @@
 
 .title-categories {
   font-size: 18px;
-  background: -webkit-linear-gradient(#ec7366, #d055c3);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #e91e63;
   margin-top: 8px;
 }
 
@@ -118,3 +117,21 @@
   flex-wrap: wrap;
 }
 
+.filter-block {
+  display: flex;
+}
+
+.sort-block {
+  display: flex;
+  align-items: center;
+}
+
+.sort-block p{
+  font-size: 14px;
+  color: #e91e63;
+  margin: 0 10px 5px 20px;
+}
+
+mat-form-field {
+  width: 170px;
+}

@@ -9,8 +9,10 @@ import {PostService} from "../../shared/services/post.service";
 })
 export class FlowersListComponent implements OnInit {
 
-  posts: Post[] = [];
-  filterFlowerByType = 'all'
+  initialPosts: Post[] = []
+  posts: Post[] = []
+  filterFlowerByType: string = 'all'
+  sortMode: string = 'default'
 
   constructor(private postService: PostService) { }
 
@@ -21,12 +23,29 @@ export class FlowersListComponent implements OnInit {
 
   getCurrentPosts() {
     this.postService.flowersPostsArray.subscribe(currentPosts => {
-      this.posts = [...currentPosts];
+      this.initialPosts = [...currentPosts];
+        this.handleSortModeChange(this.sortMode);
     })
   }
 
   getAllFlowersPosts() {
     this.postService.getAll();
+  }
+
+  handleSortModeChange(value: string) {
+    if(value === 'default') {
+      this.posts = [...this.initialPosts];
+    }else if(value === 'ascending') {
+      this.posts = [...this.initialPosts];
+      this.posts = this.posts.sort(function(a, b) {
+        return a.price - b.price;
+      });
+    } else {
+      this.posts = [...this.initialPosts];
+      this.posts = this.posts.sort(function(a, b) {
+        return b.price - a.price;
+      });
+    }
   }
 
 }
