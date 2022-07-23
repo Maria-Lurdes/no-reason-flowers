@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Post} from "../../shared/interfaces";
 import {PostService} from "../../shared/services/post.service";
+import {MatPaginator} from "@angular/material/paginator";
 
 @Component({
   selector: 'app-flowers-list',
@@ -9,12 +10,19 @@ import {PostService} from "../../shared/services/post.service";
 })
 export class FlowersListComponent implements OnInit {
 
+  @ViewChild('paginator') paginator: MatPaginator | undefined;
+
   initialPosts: Post[] = []
   posts: Post[] = []
   filterFlowerByType: string = 'all'
   sortMode: string = 'default'
+  pageIndex: number = 0
+  pageSize: number = 9
+  lowValue: number = 0
+  highValue: number = 9
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService) {
+  }
 
   ngOnInit(): void {
     this.getAllFlowersPosts();
@@ -24,7 +32,7 @@ export class FlowersListComponent implements OnInit {
   getCurrentPosts() {
     this.postService.flowersPostsArray.subscribe(currentPosts => {
       this.initialPosts = [...currentPosts];
-        this.handleSortModeChange(this.sortMode);
+      this.handleSortModeChange(this.sortMode);
     })
   }
 
@@ -33,19 +41,36 @@ export class FlowersListComponent implements OnInit {
   }
 
   handleSortModeChange(value: string) {
-    if(value === 'default') {
+    if (value === 'default') {
       this.posts = [...this.initialPosts];
-    }else if(value === 'ascending') {
+    } else if (value === 'ascending') {
       this.posts = [...this.initialPosts];
-      this.posts = this.posts.sort(function(a, b) {
+      this.posts = this.posts.sort(function (a, b) {
         return a.price - b.price;
       });
     } else {
       this.posts = [...this.initialPosts];
-      this.posts = this.posts.sort(function(a, b) {
+      this.posts = this.posts.sort(function (a, b) {
         return b.price - a.price;
       });
     }
   }
 
+  getPaginatorData(event: { pageIndex: number }) {
+    if (event.pageIndex === this.pageIndex + 1) {
+      this.lowValue = this.lowValue + this.pageSize;
+      this.highValue = this.highValue + this.pageSize;
+    } else if (event.pageIndex === this.pageIndex - 1) {
+      this.lowValue = this.lowValue - this.pageSize;
+      this.highValue = this.highValue - this.pageSize;
+    }
+    this.pageIndex = event.pageIndex;
+  }
+
+  handleFilterAndPagination(type: string) {
+    this.filterFlowerByType = type
+    this.lowValue = 0
+    this.highValue = 9
+    this.paginator?.firstPage()
+  }
 }

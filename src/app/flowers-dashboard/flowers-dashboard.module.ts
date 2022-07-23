@@ -8,6 +8,7 @@ import {SharedModule} from "../shared/shared.module";
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import {MatSelectModule} from "@angular/material/select";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [FlowersListComponent, FlowerCardComponent],
@@ -19,6 +20,7 @@ import {MatSelectModule} from "@angular/material/select";
     MatCardModule,
     MatButtonModule,
     MatSelectModule,
+    MatPaginatorModule,
   ],
 })
 export class FlowersDashboardModule {

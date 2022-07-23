@@ -40,20 +40,24 @@
 
     </div>
     <div class="flowers-types-block">
-      <div [className]="filterFlowerByType === 'bouquets' ? 'active type' : 'type'" (click)="filterFlowerByType='bouquets'">
+      <div [className]="filterFlowerByType === 'bouquets' ? 'active type' : 'type'" (click)="handleFilterAndPagination('bouquets')">
         <p>Bouquets</p>
       </div>
-      <div [className]="filterFlowerByType === 'box' ? 'active type' : 'type'" (click)="filterFlowerByType='box'">
+      <div [className]="filterFlowerByType === 'box' ? 'active type' : 'type'" (click)="handleFilterAndPagination('box')">
         <p>Flowers in a box</p>
       </div>
-      <div [className]="filterFlowerByType === 'gypsophila' ? 'active type' : 'type'" (click)="filterFlowerByType='gypsophila'">
+      <div [className]="filterFlowerByType === 'gypsophila' ? 'active type' : 'type'" (click)="handleFilterAndPagination('gypsophila')">
         <p>Gypsophila</p>
       </div>
     </div>
     <div *ngIf="posts?.length; else loading" class="flowers-wrapper">
       <app-flower-card
-        *ngFor="let post of posts | filterType:filterFlowerByType" [flowerPost]="post"></app-flower-card>
+        *ngFor="let post of posts | filterType:filterFlowerByType | slice: lowValue : highValue" [flowerPost]="post"></app-flower-card>
     </div>
+
+    <mat-paginator #paginator [length]="(posts | filterType:filterFlowerByType)?.length" [pageSize]="pageSize"
+                   (page)="getPaginatorData($event)">
+    </mat-paginator>
 
     <ng-template #loading>
       <mat-progress-bar mode="indeterminate"></mat-progress-bar>

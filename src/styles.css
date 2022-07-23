@@ -11,3 +11,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background: white;
   color: #303030;
 }
+
+.mat-paginator {
+  background: white;
+  color: #303030;
+}
+
+.mat-button-disabled {
+  color: #0000004d !important;
+}
