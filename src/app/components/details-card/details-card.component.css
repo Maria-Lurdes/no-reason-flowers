@@ -35,3 +35,26 @@ mat-dialog-container {
 h4 {
   font-weight: 200;
 }
+
+button {
+  padding: 10px 20px;
+  margin: 0;
+  color: #000;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  background: 0 0;
+  border: 1px solid #e91e63;
+  transition: all .3s linear;
+  box-shadow: none !important;
+  font-weight: 200;
+}
+
+button span {
+  font-weight: 100;
+}
+
+.content-flex {
+  display: flex;
+  justify-content: space-between;
+}
