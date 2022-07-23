@@ -19,6 +19,10 @@ h2{
   font-weight: 100;
 }
 
+.action-title {
+  cursor: pointer;
+}
+
 .image-flower {
   width: 100%;
   height: 430px;

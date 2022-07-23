@@ -6,3 +6,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-select-value {
   color: #303030 !important;
 }
+
+.mat-dialog-container {
+  background: white;
+  color: #303030;
+}

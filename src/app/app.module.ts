@@ -8,8 +8,11 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {SharedModule} from "./shared/shared.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { DetailsCardComponent } from './components/details-card/details-card.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatCardModule} from "@angular/material/card";
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent, HeaderComponent, DetailsCardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -17,7 +20,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     MatIconModule,
     MatButtonModule,
     SharedModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,14 @@
+<h2 class="title-wrapper" mat-dialog-title>
+  <mat-icon (click)="closeModal()">close</mat-icon>
+</h2>
+
+<mat-dialog-content class="mat-typography">
+  <div class="image-flower" [style.background-image]="'url('+data.image+')'"></div>
+  <mat-card-content>
+    <h2>{{data.name}}</h2>
+    <h4>{{data.description}}</h4>
+  </mat-card-content>
+  <mat-card-content>
+    <h2><b>{{data.price}} UAH</b></h2>
+  </mat-card-content>
+</mat-dialog-content>
