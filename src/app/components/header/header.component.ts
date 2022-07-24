@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Store} from "@ngrx/store";
+import {Observable} from "rxjs";
+import {selectCountProducts} from "../../card-state-store/cart.selector";
 
 @Component({
   selector: 'app-header',
@@ -7,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  countProducts$: Observable<number>
+
+  constructor(private store: Store) {
+    this.countProducts$ = store.select(selectCountProducts);
+  }
 
   ngOnInit(): void {
   }

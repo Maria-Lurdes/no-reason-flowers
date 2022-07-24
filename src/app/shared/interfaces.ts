@@ -3,6 +3,6 @@ export interface Post {
   image: string,
   name: string,
   description: string,
-  type: string,
+  flowerType: string,
   price: number
 }

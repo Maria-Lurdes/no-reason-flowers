@@ -1,0 +1,20 @@
+<div class="page-wrapper">
+  <h1>Shopping cart</h1>
+
+  <mat-card class="flex-block" *ngFor="let flowerPost of flowersToBuy$| async">
+    <div class="image-flower" [style.background-image]="'url('+flowerPost.product.image+')'"></div>
+    <div class="name">{{flowerPost.product.name}}</div>
+    <div class="price name">{{flowerPost.product.price}} UAH</div>
+    <div class="quantity name">Quantity: {{flowerPost.count}}</div>
+    <div class="delete-block"><mat-icon (click)="deleteFlowerFromCart(flowerPost.product)"  color="primary">delete</mat-icon></div>
+  </mat-card>
+
+  <span class="total">{{countProducts$ | async}} products worth {{totalPrice$ | async | number: '1.2-2'}} UAH</span>
+
+  <h1 class="end-text">To pay: {{totalPrice$ | async | number: '1.2-2'}} UAH</h1>
+
+  <div class="flex-block btns-block">
+    <button class="clear" (click)="clearEntries()" mat-raised-button>CLEAR ALL</button>
+    <button mat-raised-button>PROCEED TO PAYMENT</button>
+  </div>
+</div>

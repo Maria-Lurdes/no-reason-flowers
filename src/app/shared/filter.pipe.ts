@@ -12,7 +12,7 @@ export class FilterPipe implements PipeTransform {
     }
 
     return posts.filter(post => {
-      return post.type === type
+      return post.flowerType === type
     })
   }
 

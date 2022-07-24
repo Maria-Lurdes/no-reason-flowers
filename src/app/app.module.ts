@@ -11,8 +11,12 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { DetailsCardComponent } from './components/details-card/details-card.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatCardModule} from "@angular/material/card";
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import {StoreModule} from "@ngrx/store";
+import {cartReducer, metaReducerLocalStorage} from "./card-state-store/cart.reducer";
+import {MatBadgeModule} from "@angular/material/badge";
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, DetailsCardComponent],
+  declarations: [AppComponent, HeaderComponent, DetailsCardComponent, ShoppingCartComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,7 +26,9 @@ import {MatCardModule} from "@angular/material/card";
     SharedModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
+    StoreModule.forRoot({cartEntries: cartReducer}, {metaReducers: [metaReducerLocalStorage]}),
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

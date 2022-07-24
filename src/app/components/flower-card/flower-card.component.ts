@@ -2,6 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Post} from "../../shared/interfaces";
 import {MatDialog} from "@angular/material/dialog";
 import {DetailsCardComponent} from "../details-card/details-card.component";
+import {Store} from "@ngrx/store";
+import {addProduct} from "../../card-state-store/cart.actions";
 
 @Component({
   selector: 'app-flower-card',
@@ -10,11 +12,15 @@ import {DetailsCardComponent} from "../details-card/details-card.component";
 })
 export class FlowerCardComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private store: Store) { }
 
-  @Input() flowerPost: Post | undefined
+  @Input() flowerPost: Post = {name: '', description: '', price : 0, image: '', id: '', flowerType: ''}
 
   ngOnInit(): void {
+  }
+
+  addToCart() {
+    this.store.dispatch(addProduct(this.flowerPost));
   }
 
   openDialog() {
