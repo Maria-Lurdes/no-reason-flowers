@@ -50,7 +50,7 @@
         <p>Gypsophila</p>
       </div>
     </div>
-    <div *ngIf="posts?.length; else loading" class="flowers-wrapper">
+    <div *ngIf="(posts | filterType:filterFlowerByType | slice: lowValue : highValue)?.length; else loading" class="flowers-wrapper">
       <app-flower-card
         *ngFor="let post of posts | filterType:filterFlowerByType | slice: lowValue : highValue" [flowerPost]="post"></app-flower-card>
     </div>
@@ -60,6 +60,8 @@
     </mat-paginator>
 
     <ng-template #loading>
+      {{lowValue}} - lowValue
+      {{highValue}} - highValue
       <mat-progress-bar mode="indeterminate"></mat-progress-bar>
     </ng-template>
   </div>

@@ -11,6 +11,9 @@ export class FilterPipe implements PipeTransform {
       return posts
     }
 
+    console.log(posts.filter(post => {
+      return post.flowerType === type
+    }), 'filtered')
     return posts.filter(post => {
       return post.flowerType === type
     })

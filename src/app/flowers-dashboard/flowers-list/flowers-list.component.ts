@@ -26,18 +26,13 @@ export class FlowersListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllFlowersPosts();
-    this.getCurrentPosts();
-  }
-
-  getCurrentPosts() {
-    this.postService.flowersPostsArray.subscribe(currentPosts => {
-      this.initialPosts = [...currentPosts];
-      this.handleSortModeChange(this.sortMode);
-    })
   }
 
   getAllFlowersPosts() {
-    this.postService.getAll();
+    this.postService.getAll().subscribe((data: Post[]) => {
+      this.initialPosts = [...data];
+      this.handleSortModeChange(this.sortMode);
+    });
   }
 
   handleSortModeChange(value: string) {
@@ -60,7 +55,7 @@ export class FlowersListComponent implements OnInit {
     if (event.pageIndex === this.pageIndex + 1) {
       this.lowValue = this.lowValue + this.pageSize;
       this.highValue = this.highValue + this.pageSize;
-    } else if (event.pageIndex === this.pageIndex - 1) {
+    } else if (event.pageIndex === this.pageIndex - 1 && this.lowValue > 0) {
       this.lowValue = this.lowValue - this.pageSize;
       this.highValue = this.highValue - this.pageSize;
     }
@@ -68,9 +63,9 @@ export class FlowersListComponent implements OnInit {
   }
 
   handleFilterAndPagination(type: string) {
-    this.filterFlowerByType = type
-    this.lowValue = 0
-    this.highValue = 9
-    this.paginator?.firstPage()
+      this.lowValue = 0
+      this.highValue = 9
+      this.paginator?.firstPage()
+      this.filterFlowerByType = type
   }
 }
