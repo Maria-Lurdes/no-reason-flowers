@@ -9,6 +9,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import {MatSelectModule} from "@angular/material/select";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [FlowersListComponent, FlowerCardComponent],
@@ -21,6 +22,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     MatButtonModule,
     MatSelectModule,
     MatPaginatorModule,
+    MatSnackBarModule
   ],
 })
 export class FlowersDashboardModule {

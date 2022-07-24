@@ -15,6 +15,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import {StoreModule} from "@ngrx/store";
 import {cartReducer, metaReducerLocalStorage} from "./card-state-store/cart.reducer";
 import {MatBadgeModule} from "@angular/material/badge";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 @NgModule({
   declarations: [AppComponent, HeaderComponent, DetailsCardComponent, ShoppingCartComponent],
   imports: [
@@ -28,7 +29,8 @@ import {MatBadgeModule} from "@angular/material/badge";
     MatDialogModule,
     MatCardModule,
     StoreModule.forRoot({cartEntries: cartReducer}, {metaReducers: [metaReducerLocalStorage]}),
-    MatBadgeModule
+    MatBadgeModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

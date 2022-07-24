@@ -4,6 +4,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {DetailsCardComponent} from "../details-card/details-card.component";
 import {Store} from "@ngrx/store";
 import {addProduct} from "../../card-state-store/cart.actions";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-flower-card',
@@ -12,7 +13,7 @@ import {addProduct} from "../../card-state-store/cart.actions";
 })
 export class FlowerCardComponent implements OnInit {
 
-  constructor(public dialog: MatDialog, private store: Store) { }
+  constructor(public dialog: MatDialog, private store: Store, private _snackBar: MatSnackBar) { }
 
   @Input() flowerPost: Post = {name: '', description: '', price : 0, image: '', id: '', flowerType: ''}
 
@@ -21,6 +22,9 @@ export class FlowerCardComponent implements OnInit {
 
   addToCart() {
     this.store.dispatch(addProduct(this.flowerPost));
+    this._snackBar.open('Product was successfuly added to shopping cart', 'Close', {
+      duration: 3000, verticalPosition: 'top'
+    });
   }
 
   openDialog() {
