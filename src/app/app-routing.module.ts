@@ -7,9 +7,9 @@ const routes: Routes = [
   {path: '', redirectTo: 'flowers-dashboard', pathMatch: 'full'},
   {
     path: 'pets-dashboard',
-    loadChildren: () => import('./dashboard/flowers-dashboard.module').then(m => m.FlowersDashboardModule)
+    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
   },
-  {path: '**', loadChildren: () => import('./dashboard/flowers-dashboard.module').then(m => m.FlowersDashboardModule)},
+  {path: '**', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)},
 ];
 
 @NgModule({

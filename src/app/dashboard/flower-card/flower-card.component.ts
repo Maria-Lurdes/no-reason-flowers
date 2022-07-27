@@ -3,8 +3,8 @@ import {MatDialog} from "@angular/material/dialog";
 import {DetailsCardComponent} from "../details-card/details-card.component";
 import {Store} from "@ngrx/store";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {Post} from "../../interfaces";
-import {addProduct} from "../../../store/cart.actions";
+import {Post} from "../../shared/interfaces";
+import {addProduct} from "../../store/cart.actions";
 
 @Component({
   selector: 'app-flower-card',

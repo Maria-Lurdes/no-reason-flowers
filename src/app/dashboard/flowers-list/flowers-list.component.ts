@@ -36,19 +36,21 @@ export class FlowersListComponent implements OnInit {
   }
 
   handleSortModeChange(value: string) {
-    if (value === 'default') {
-      this.posts = [...this.initialPosts];
-    } else if (value === 'ascending') {
-      this.posts = [...this.initialPosts];
-      this.posts = this.posts.sort(function (a, b) {
-        return a.price - b.price;
-      });
-    } else {
-      this.posts = [...this.initialPosts];
-      this.posts = this.posts.sort(function (a, b) {
-        return b.price - a.price;
-      });
+    this.posts = this.sortedPosts(value);
+  }
+
+  sortedPosts(type: string) {
+    let items = [...this.initialPosts];
+
+    if (type === 'ascending') {
+      items = items.sort((a: Post, b: Post) => a.price - b.price)
     }
+
+    if (type === 'descending') {
+      items = items.sort((a: Post, b: Post) => b.price - a.price)
+    }
+
+    return items
   }
 
   getPaginatorData(event: { pageIndex: number }) {

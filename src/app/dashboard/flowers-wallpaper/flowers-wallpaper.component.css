@@ -1,0 +1,26 @@
+.find-block {
+  width: 100%;
+  height: 100vh;
+  background: url("../../../assets/flowers.avif");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-title-wrapper {
+  width: 98%;
+  max-width: 1440px;
+  min-width: 300px;
+}
+
+.title {
+  font-size: 50px;
+  text-align: center;
+  line-height: 67px;
+  color: white;
+  font-style: italic;
+}

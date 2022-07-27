@@ -2,8 +2,8 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {Store} from "@ngrx/store";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {addProduct} from "../../../store/cart.actions";
-import {Post} from "../../interfaces";
+import {Post} from "../../shared/interfaces";
+import {addProduct} from "../../store/cart.actions";
 
 @Component({
   selector: 'app-details-card',
