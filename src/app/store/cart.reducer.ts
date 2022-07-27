@@ -1,5 +1,5 @@
-import { createReducer, on, ActionReducer, INIT, UPDATE } from '@ngrx/store';
-import { addProduct, clearCart, removeProduct } from './cart.actions';
+import {ActionReducer, createReducer, INIT, on, UPDATE} from '@ngrx/store';
+import {addProduct, clearCart, removeProduct} from './cart.actions';
 import {Post} from "../shared/interfaces";
 
 export const intialCartEntries: Post[] = [];
@@ -7,7 +7,7 @@ export const intialCartEntries: Post[] = [];
 export const cartReducer = createReducer(
   intialCartEntries,
 
-  on(clearCart, _ => [] ),
+  on(clearCart, _ => []),
 
   on(addProduct, (entries, product) => {
     const entriesClone = [...entries];
@@ -15,7 +15,7 @@ export const cartReducer = createReducer(
     return entriesClone;
   }),
 
-  on(removeProduct, (entries: any, product: {id: string}) => {
+  on(removeProduct, (entries: any, product: { id: string }) => {
     const entriesClone = [...entries];
     const found = entriesClone.find((e: Post) => e.id == product.id);
     if (found) {

@@ -1,14 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
-import {clearCart, removeProduct} from "../card-state-store/cart.actions";
+import {clearCart, removeProduct} from "../store/cart.actions";
 import {Post} from "../shared/interfaces";
 import {Observable} from "rxjs";
-import {
-  ProductGroup,
-  selectCountProducts,
-  selectGroupedCartEntries,
-  selectTotalPrice
-} from "../card-state-store/cart.selector";
+import {ProductGroup, selectCountProducts, selectGroupedCartEntries, selectTotalPrice} from "../store/cart.selector";
 
 @Component({
   selector: 'app-shopping-cart',

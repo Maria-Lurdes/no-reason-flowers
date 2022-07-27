@@ -63,9 +63,9 @@ export class FlowersListComponent implements OnInit {
   }
 
   handleFilterAndPagination(type: string) {
-      this.lowValue = 0
-      this.highValue = 9
-      this.paginator?.firstPage()
-      this.filterFlowerByType = type
+    this.lowValue = 0
+    this.highValue = 9
+    this.paginator?.firstPage()
+    this.filterFlowerByType = type
   }
 }

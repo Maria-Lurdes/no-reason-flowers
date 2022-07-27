@@ -1,9 +1,9 @@
-import { createFeatureSelector, createSelector } from '@ngrx/store';
+import {createFeatureSelector, createSelector} from '@ngrx/store';
 import {Post} from "../shared/interfaces";
 
 export interface ProductGroup {
   product: Post;
-  count:number;
+  count: number;
 }
 
 export const selectCountProducts = createSelector(
@@ -32,7 +32,7 @@ export const selectGroupedCartEntries = createSelector(
       if (map.get(Number(p.id))) {
         (map.get(Number(p.id)) as ProductGroup).count++;
       } else {
-        map.set(Number(p.id), { product: p, count: 1 });
+        map.set(Number(p.id), {product: p, count: 1});
       }
     })
 
